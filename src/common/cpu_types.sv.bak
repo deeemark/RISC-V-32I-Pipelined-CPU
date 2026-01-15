@@ -1,0 +1,14 @@
+package cpu_types;
+    typedef struct packed {
+        logic  regwrite;
+        logic  memread;
+        logic  memwrite;
+        logic  memtoreg;
+        logic  branch;
+        logic alusrc;
+        logic [1:0] aluop;
+		logic  is_rtype;
+		logic jump;
+    } ctrl_t;
+endpackage
+
