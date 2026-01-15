@@ -13,7 +13,7 @@
 - Forwarding unit
 - Hazard control unit
 - Instruction memory via hex file
-- testbenches
+- testbench verification
 
 ## Usage
 
@@ -41,3 +41,4 @@ x6 = 17
 - Out of order Processing
 
 By DeMarkus Taylor
+
