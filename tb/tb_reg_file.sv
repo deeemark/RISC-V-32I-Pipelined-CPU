@@ -25,7 +25,7 @@ module tb_reg_file;
     initial clk = 0;
     always #5 clk = ~clk;    
     
-    // handy task: do a write on next posedge
+    //do a write on next posedge
   task automatic write_reg(input [4:0] r, input [31:0] v);
     begin
       @(negedge clk);   // set up before posedge
@@ -61,7 +61,7 @@ module tb_reg_file;
     @(posedge clk);
     #1;
 
-    // read a couple regs (should be 0)
+    // read a couple regs
     read_regs(5'd0, 5'd1);
     read_regs(5'd2, 5'd31);
 
@@ -77,7 +77,6 @@ module tb_reg_file;
     // read back
     read_regs(5'd1, 5'd2);
 
-    // attempt to write x0 (should NOT change)
     $display("=== Attempt write x0=0xFFFFFFFF (should be ignored) ===");
     write_reg(5'd0, 32'hFFFF_FFFF);
     read_regs(5'd0, 5'd1);  // x0 must still be 0; x1 unchanged
